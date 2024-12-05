@@ -5,6 +5,7 @@ import 'package:dragon_jump/game/game.dart';
 import 'package:dragon_jump/helpers/constant.dart';
 import 'package:dragon_jump/overlays/sound_pause_buttons.dart';
 import 'package:dragon_jump/screens/main_menu.dart';
+import 'package:get/utils.dart';
 
 import '../controllers/server_client_controller.dart';
 import '../models/multiplayer_game_data.dart';
@@ -33,8 +34,8 @@ class PauseMenu extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Pause',
+            Text(
+              'pause'.tr,
               style: kDefaultOverlayTitleStyle,
             ),
             SizedBox(

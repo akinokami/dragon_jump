@@ -1,9 +1,17 @@
+import 'dart:io';
+
+import 'package:dragon_jump/screens/settings/game_setting_screen.dart';
+import 'package:dragon_jump/screens/widgets/custom_game_button.dart';
+import 'package:dragon_jump/utils/dimen_const.dart';
 import 'package:flutter/material.dart';
 import 'package:dragon_jump/controllers/score_controller.dart';
 import 'package:dragon_jump/controllers/server_client_controller.dart';
 import 'package:dragon_jump/helpers/constant.dart';
 import 'package:dragon_jump/models/multiplayer_game_data.dart';
 import 'package:dragon_jump/screens/game_play.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/utils.dart';
 
 class MainMenu extends StatelessWidget {
   final ScoreController scoreController;
@@ -36,7 +44,7 @@ class MainMenu extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Highest Score : ',
+                '${'highest_score'.tr} : ',
                 style: kGameSubTitleStyle,
               ),
               Text(
@@ -52,7 +60,7 @@ class MainMenu extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Second Highset Score : ',
+                '${'second_highest_score'.tr} : ',
                 style: kGameSubTitleStyle,
               ),
               Text(
@@ -80,6 +88,27 @@ class MainMenu extends StatelessWidget {
               },
               child: Image.asset('assets/images/buttons/play_button.png'),
             ),
+          ),
+          kSizedBoxH10,
+          CustomGameButton(
+            onTap: () {
+              Get.to(() => const GameSettingScreen());
+            },
+            width: 0.2.sh,
+            text: 'settings'.tr,
+            textColor: Colors.white,
+          ),
+          kSizedBoxH10,
+          CustomGameButton(
+            onTap: () {
+              exit(0);
+            },
+            width: 0.2.sh,
+            text: 'exit'.tr,
+            textColor: Colors.white,
+            color1: const Color.fromARGB(255, 196, 84, 76),
+            color2: const Color.fromARGB(255, 202, 143, 140),
+            color3: const Color.fromARGB(255, 196, 84, 76),
           ),
         ],
       ),

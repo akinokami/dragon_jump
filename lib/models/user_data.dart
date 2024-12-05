@@ -16,14 +16,12 @@ class UserData extends HiveObject {
   late bool music;
 
   @HiveField(4)
-  late int secondScore;
+  int secondScore = 0;
 
   void setsecondScore(int second) {
-    secondScore= second;
+    secondScore = second;
     save();
   }
-
-
 
   void setHighestScore(int score) {
     highestScore = score;

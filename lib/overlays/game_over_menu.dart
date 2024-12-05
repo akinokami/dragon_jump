@@ -6,6 +6,7 @@ import 'package:dragon_jump/overlays/pause_menu.dart';
 import 'package:dragon_jump/overlays/sound_pause_buttons.dart';
 import 'package:dragon_jump/screens/main_menu.dart';
 import 'package:dragon_jump/screens/widgets/button_text_with_background.dart';
+import 'package:get/utils.dart';
 
 import '../controllers/server_client_controller.dart';
 import '../helpers/constant.dart';
@@ -34,7 +35,7 @@ class GameOverMenu extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Game over',
+              'game_over'.tr,
               style: kDefaultOverlayTitleStyle,
             ),
             SizedBox(
